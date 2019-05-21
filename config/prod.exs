@@ -19,6 +19,11 @@ config :vocial, VocialWeb.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :vocial, Vocial.Repo,
+  url: System.get_env("DATABASE_URL"),
+  ssl: true,
+  pool_size: 2
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key
